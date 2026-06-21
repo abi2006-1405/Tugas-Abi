@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tugas</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+overflow:hidden;
+font-family:'Segoe UI',sans-serif;
+background:#000;
+}
+
+#bgVideo{
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+filter:
+brightness(.35)
+blur(4px);
+
+opacity:0;
+
+transition:1.5s;
+
+z-index:-2;
+}
+
+.overlay{
+position:fixed;
+inset:0;
+
+background:
+rgba(255,245,235,.20);
+
+z-index:-1;
+}
+
+.page{
+height:100vh;
+
+display:none;
+
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+padding:20px;
+}
+
+.active{
+display:flex;
+}
+
+.card{
+
+width:720px;
+max-width:92%;
+
+background:
+rgba(255,255,255,.95);
+
+border-radius:28px;
+
+padding:40px;
+
+position:relative;
+
+backdrop-filter:blur(15px);
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.18);
+
+}
+
+.label{
+
+position:absolute;
+
+top:-15px;
+left:25px;
+
+background:#b76e79;
+
+color:white;
+
+padding:8px 18px;
+
+border-radius:20px;
+
+font-size:14px;
+font-weight:600;
+
+}
+
+.text{
+
+font-family:'Caveat',cursive;
+
+font-size:34px;
+
+line-height:1.3;
+
+text-align:center;
+
+color:#2e2e2e;
+
+}
+
+/* FOTO */
+
+.foto{
+
+width:170px;
+
+height:170px;
+
+object-fit:cover;
+
+display:block;
+
+margin:0 auto 20px auto;
+
+border-radius:20px;
+
+border:5px solid white;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.2);
+
+transform:rotate(-3deg);
+
+}
+
+button{
+
+margin-top:25px;
+
+background:#b76e79;
+
+color:white;
+
+padding:14px 40px;
+
+border:none;
+
+border-radius:999px;
+
+font-size:16px;
+
+cursor:pointer;
+
+}
+
+</style>
+
+</style>
+
+</head>
+
+<body>
+
+<video autoplay muted loop id="bgVideo">
+<source src="kenangan.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<audio id="musik" loop>
+<source src="lagu.mp3" type="audio/mpeg">
+</audio>
+
+<!-- HALAMAN PEMBUKA -->
+
+<div class="page active">
+
+<div class="card"
+style="
+background:transparent;
+border:none;
+box-shadow:none;
+backdrop-filter:none;
+">
+
+<div class="text"
+style="
+font-family:'Segoe UI',sans-serif;
+font-size:28px;
+line-height:1.8;
+color:white;
+
+">
+
+WEBSITE MEMESAN MAKANAN ONLINE
+
+pelayanan terbaik di Indonesia
+
+<br><br>
+
+Klik lanjut jika ingin melihat.
+
+</div>
+
+</div>
+
+<button onclick="nextPage()">
+Lanjut →
+</button>
+
+</div>
+
+<!-- HALAMAN 2 -->
+
+<div class="page">
+
+<div class="card">
+
+<div class="label">
+untuk kamu
+</div>
+
+<div class="text" id="text1"></div>
+
+</div>
+
+<button onclick="nextPage()">
+Lanjut ❤️
+</button>
+
+</div>
+
+<!-- HALAMAN 3 -->
+
+<div class="page">
+
+<div class="card">
+
+<div class="label">
+yang ingin aku bilang
+</div>
+
+<div class="text" id="text2"></div>
+
+</div>
+
+<button onclick="nextPage()">
+Lanjut ❤️
+</button>
+
+</div>
+
+<!-- HALAMAN 4 -->
+
+<div class="page">
+
+<div class="card">
+
+<div class="label">
+akhirnya aku sadar
+</div>
+
+<div class="text" id="text3"></div>
+
+</div>
+
+<button onclick="nextPage()">
+Lanjut ❤️
+</button>
+
+</div>
+
+<!-- HALAMAN 5 -->
+
+<div class="page">
+
+<div class="card">
+
+<div class="label">
+tentang kita
+</div>
+
+<div class="text" id="text4"></div>
+
+</div>
+
+<button onclick="nextPage()">
+Lanjut ❤️
+</button>
+
+</div>
+
+<!-- HALAMAN 6 -->
+
+<div class="page">
+
+<div class="card">
+
+<img src="foto.jpg" class="foto">
+
+<div class="label">
+yang nggak pernah aku bilang
+</div>
+
+<div class="text" id="text5"></div>
+
+</div>
+
+<button onclick="nextPage()">
+Lanjut ❤️
+</button>
+
+</div>
+
+<!-- HALAMAN 7 -->
+
+<div class="page">
+
+<div class="card">
+
+<div class="label">
+jujur aja
+</div>
+
+<div class="text" id="text6"></div>
+
+</div>
+
+<button onclick="nextPage()">
+Lanjut ❤️
+</button>
+
+</div>
+
+<!-- HALAMAN 8 -->
+
+<div class="page">
+
+<div class="card">
+
+<div class="label">
+sampai hari ini
+</div>
+
+<div class="text" id="text7"></div>
+
+</div>
+
+<button onclick="nextPage()">
+Lanjut ❤️
+</button>
+
+</div>
+
+<!-- HALAMAN 9 -->
+
+<div class="page">
+
+<div class="card">
+
+<div class="label">
+yang ingin aku sampaikan
+</div>
+
+<div class="text" id="text8"></div>
+
+</div>
+
+<button onclick="nextPage()">
+Lanjut ❤️
+</button>
+
+</div>
+
+<!-- HALAMAN 10 -->
+
+<div class="page">
+
+<div class="card" id="lastCard">
+
+<div class="label">
+satu pertanyaan terakhir
+</div>
+
+<div class="text" id="text9"></div>
+
+<div style="margin-top:25px;">
+
+<button onclick="jawabYa()">
+❤️ Aku Mau Mencoba Lagi
+</button>
+
+<button onclick="jawabBelum()">
+🌷 Aku Masih Butuh Waktu
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* =========================
+   TEXT WEBSITE
+========================= */
+
+const texts = [
+
+"",
+
+`Hai sayang...
+
+Kalau kamu lagi baca ini sekarang,
+makasih ya udah mau luangin waktu buat lihat semua ini.`,
+
+`Sebenernya aku nggak bikin ini karena aku kehilangan kamu sepenuhnya.
+
+Karena sampai hari ini kita masih ngobrol.
+Masih teleponan.
+Masih keluar juga.
+
+Dan jujur...
+aku bersyukur buat itu.`,
+
+`Tapi semakin hari aku sadar satu hal.
+
+Yang aku kangenin bukan chatnya.
+Bukan teleponnya.
+
+Karena semua itu masih ada.
+
+Yang aku kangenin...
+adalah perasaan tenang karena tahu kamu masih jadi pacarku.`,
+
+`Kadang pas kita ngobrol aku suka lupa kalau keadaan kita udah berubah.
+
+Masih ketawa.
+Masih cerita.
+Masih bercanda.
+
+Sampai akhirnya aku ingat...
+
+sekarang semuanya nggak sama seperti dulu lagi.`,
+
+`Kalau dipikir-pikir...
+
+aku nggak kehilangan kamu sepenuhnya.
+
+Tapi aku kehilangan status yang paling aku suka dari kita.
+
+Aku kehilangan kesempatan buat bilang,
+"itu pacarku."
+
+Dan ternyata itu lebih berat dari yang aku kira.`,
+
+`Ada banyak pesan yang sebenarnya pernah aku ketik.
+
+Panjang.
+Banget.
+
+Tapi akhirnya aku hapus lagi.
+
+Bukan karena aku nggak jadi ngomong.
+
+Aku cuma takut bikin kamu nggak nyaman.`,
+
+`Jujur...
+
+aku seneng karena sampai hari ini kita masih bisa ngobrol.
+
+Walaupun sekarang cuma sebagai teman.
+
+Karena setidaknya aku masih bisa tahu kabar kamu.
+
+Dan itu lebih berarti dari yang mungkin kamu kira.`,
+
+`Aku nggak bikin ini buat maksa kamu balik.
+
+Aku cuma pengen jujur.
+
+Karena sampai hari ini...
+
+di antara banyak hal yang berubah,
+
+perasaanku ke kamu masih belum berubah.`,
+
+`Kalau aku minta kesempatan untuk jadi pacarmu lagi...
+
+apa kamu mau mempertimbangkannya? ❤️`
+
+];
+
+/* =========================
+   TYPE EFFECT
+========================= */
+
+function typeText(id,text){
+
+const el = document.getElementById(id);
+
+if(!el) return;
+
+el.innerHTML = "";
+
+let i = 0;
+
+function typing(){
+
+if(i < text.length){
+
+if(text.charAt(i) === "\n"){
+
+el.innerHTML += "<br>";
+
+}else{
+
+el.innerHTML += text.charAt(i);
+
+}
+
+i++;
+
+setTimeout(
+typing,
+Math.random()*25+20
+);
+
+}
+
+}
+
+typing();
+
+}
+
+/* =========================
+   PAGE
+========================= */
+
+let currentPage = 0;
+
+const pages =
+document.querySelectorAll(".page");
+
+function nextPage(){
+
+if(currentPage === 0){
+
+document
+.getElementById("bgVideo")
+.style.opacity = "1";
+
+const musik =
+document.getElementById("musik");
+
+if(musik){
+
+musik.play().catch(()=>{});
+
+}
+
+startHearts();
+
+}
+
+pages[currentPage]
+.classList.remove("active");
+
+currentPage++;
+
+if(currentPage < pages.length){
+
+pages[currentPage]
+.classList.add("active");
+
+typeText(
+"text"+currentPage,
+texts[currentPage]
+);
+
+}
+
+}
+
+/* =========================
+   START PAGE
+========================= */
+
+/* =========================
+   LOVE EFFECT
+========================= */
+
+let heartInterval;
+
+function createHeart(){
+
+const heart =
+document.createElement("div");
+
+const hearts = [
+"❤️",
+"💕",
+"💖",
+"🤍"
+];
+
+heart.innerHTML =
+hearts[
+Math.floor(
+Math.random()*hearts.length
+)
+];
+
+heart.classList.add("heart");
+
+heart.style.left =
+Math.random()*window.innerWidth
++ "px";
+
+heart.style.fontSize =
+(Math.random()*20+15)
++ "px";
+
+document.body.appendChild(
+heart
+);
+
+let pos = -50;
+
+const fall = setInterval(()=>{
+
+pos += 3;
+
+heart.style.top =
+pos + "px";
+
+if(pos > window.innerHeight){
+
+clearInterval(fall);
+
+heart.remove();
+
+}
+
+},20);
+
+}
+
+function startHearts(){
+
+if(!heartInterval){
+
+heartInterval =
+setInterval(
+createHeart,
+1800
+);
+
+}
+
+}
+
+/* =========================
+   BUTTON JAWABAN
+========================= */
+
+function jawabYa(){
+
+const card =
+document.getElementById("lastCard");
+
+card.innerHTML = `
+
+<div class="label">
+❤️ makasih
+</div>
+
+<div class="text">
+
+Jujur...
+
+aku seneng banget baca itu.
+
+Aku nggak janji bakal jadi sempurna.
+
+Tapi aku janji bakal belajar
+dari semua yang pernah terjadi.
+
+Dan kalau kesempatan itu datang lagi...
+
+aku bakal menjaganya
+lebih baik dari sebelumnya.
+
+❤️
+
+- Abi
+
+</div>
+
+`;
+
+}
+
+function jawabBelum(){
+
+const card =
+document.getElementById("lastCard");
+
+card.innerHTML = `
+
+<div class="label">
+🌷 terima kasih
+</div>
+
+<div class="text">
+
+Nggak apa-apa.
+
+Aku cuma pengen jujur
+tentang apa yang aku rasain.
+
+Dan apapun jawabannya...
+
+aku tetap bersyukur
+karena kamu udah baca
+semuanya sampai akhir.
+
+❤️
+
+- Abi
+
+</div>
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>S
